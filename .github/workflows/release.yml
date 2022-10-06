@@ -9,11 +9,15 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows-2016
 
     steps:
       - uses: actions/checkout@v3
-
+      
+      - name: Set up Visual C Build Tools Workload for Visual Studio 2017 Build Tools
+        run: |
+          choco install visualstudio2017-workload-vctools
+          
       - uses: actions/setup-node@v2
         with:
           node-version: 14
