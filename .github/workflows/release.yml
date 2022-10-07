@@ -30,6 +30,6 @@ jobs:
           
       - uses: actions/upload-artifact@v3
         with: 
-          name: AppDirWindows
-          path: Windows.tar
+          name: Oni2_win
+          path: AppDir.tar
                    
