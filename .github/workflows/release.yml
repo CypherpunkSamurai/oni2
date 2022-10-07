@@ -13,7 +13,8 @@ jobs:
           fetch-depth: 0
           ref: stable
           
-      - uses: lukka/get-cmake@latest
+      - name: Setup cmake
+        uses: jwlawson/actions-setup-cmake@v1.12
                               
       - name: Esy setup
         run: |
