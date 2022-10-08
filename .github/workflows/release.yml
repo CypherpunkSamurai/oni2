@@ -2,6 +2,7 @@ name: CI-windows
 
 on:
   workflow_dispatch:
+  push:
 
 jobs:
   build:
