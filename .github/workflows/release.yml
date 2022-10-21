@@ -41,13 +41,20 @@ jobs:
           esy bootstrap
           esy build --verbosity=debug
       
-      - name: Windows Publish
-        run: |
-          ./scripts/windows/publish.ps1
-          tar -cvf AppDir.tar _publish
-          
+#      - name: Windows Publish
+#        run: |
+#          ./scripts/windows/publish.ps1
+#          tar -cvf AppDir.tar _publish
+#
+
+
       - uses: actions/upload-artifact@v3
         with: 
-          name: Oni2_win
-          path: AppDir.tar
-                   
+          name: Oni2_win_publish
+          path: _publish/
+
+      - name: Setup tmate session
+        if: ${{ failure() }}
+        uses: mxschmitt/action-tmate@v3
+
+
